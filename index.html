@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>고압가스 필기 연습</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>고압가스산업기사 필기 연습</h1>
+    <div id="quiz-box" style="position:relative;">
+    <p id="question"></p>
+        <div id="options"></div>
+        <button id="next-btn">다음 문제</button>
+        <p id="result"></p>
+        <div id="goto-box" style="position:absolute; right:10px; bottom:10px;">
+            <input type="number" id="goto-input" min="1" style="width:60px;"> 
+            <button id="goto-btn">이동</button>
+        </div>
+        <div id="wrong-btns" style="position:absolute; left:10px; bottom:10px;"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
