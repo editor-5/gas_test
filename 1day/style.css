@@ -2,6 +2,7 @@ body {
     font-family: sans-serif;
     text-align: center;
     background: #f4f4f4;
+    font-size: 18px;
 }
 #quiz-box {
     background: white;
@@ -9,21 +10,67 @@ body {
     margin: auto;
     max-width: 500px;
     border-radius: 10px;
+    box-sizing: border-box;
 }
 button {
-    padding: 10px 20px;
+    padding: 14px 28px;
     margin-top: 10px;
     background: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 6px;
 }
 button:hover {
     background: #45a049;
 }
 .option-btn {
     display: block;
-    margin: 5px auto;
-    padding: 10px;
-    width: 80%;
-    background: #ddd...
+    margin: 8px auto;
+    padding: 16px;
+    width: 90%;
+    background: #096d05;
+    font-size: 1.1em;
+    border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-size: 16px;
+        min-height: 100vh;
+        background: #f4f4f4;
+    }
+    #quiz-box {
+        max-width: 100vw;
+        width: 100vw;
+        min-height: 100vh;
+        height: 100vh;
+        padding: 5vw 2vw 10vw 2vw;
+        box-sizing: border-box;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    button, .option-btn {
+        font-size: 1em;
+        padding: 12px 0;
+    }
+    #goto-box, #wrong-btns {
+        position: static !important;
+        display: block;
+        margin: 10px auto 0 auto;
+        text-align: center;
+    }
+    #goto-input {
+        width: 50px;
+        font-size: 1em;
+    }
+}
