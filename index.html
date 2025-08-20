@@ -3,139 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>가스산업기사 필기시험</title>
-    <meta name="description" content="대한민국 가스산업기사 필기시험 준비를 위한 60문제 모의고사">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Gas Industry Quiz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 시험 헤더 -->
-    <header id="exam-header" class="header">
-        <div class="container">
-            <div class="header-content">
-                <h1 class="title">가스산업기사 필기시험</h1>
-                <div class="question-counter">
-                    <span id="current-question">1</span> / <span id="total-questions">60</span>
-                </div>
-            </div>
-            <div class="progress-container">
-                <div id="progress-bar" class="progress-bar"></div>
-            </div>
+    <div id="quiz-container">
+        <h2 id="question-text">Question text will appear here</h2>
+        <div id="options-container">
+            <!-- Options will be dynamically added here by JavaScript -->
         </div>
-    </header>
-
-    <!-- 메인 콘텐츠 -->
-    <main class="main">
-        <div class="container">
-            <!-- 로딩 화면 -->
-            <div id="loading-screen" class="loading-screen">
-                <div class="loading-spinner"></div>
-                <p>문제를 불러오는 중...</p>
-            </div>
-
-            <!-- 문제 카드 -->
-            <div id="question-card" class="question-card hidden">
-                <div class="question-header">
-                    <span id="question-badge" class="question-badge">문제 1</span>
-                </div>
-                
-                <div class="question-content">
-                    <h2 id="question-text" class="question-text"></h2>
-                </div>
-
-                <div id="answer-options" class="answer-options">
-                    <!-- 답변 옵션들이 동적으로 생성됩니다 -->
-                </div>
-
-                <!-- 피드백 섹션 -->
-                <div id="feedback-section" class="feedback-section hidden">
-                    <div class="feedback-content">
-                        <div class="feedback-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 12l2 2 4-4"></path>
-                                <circle cx="12" cy="12" r="10"></circle>
-                            </svg>
-                        </div>
-                        <div class="feedback-text">
-                            <p id="feedback-title" class="feedback-title"></p>
-                            <p id="feedback-explanation" class="feedback-explanation"></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 네비게이션 -->
-                <div class="navigation">
-                    <button id="prev-btn" class="nav-btn nav-btn-outline" disabled>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="15,18 9,12 15,6"></polyline>
-                        </svg>
-                        이전
-                    </button>
-                    
-                    <div class="exam-brand">가스산업기사 필기시험</div>
-                    
-                    <button id="next-btn" class="nav-btn nav-btn-primary">
-                        다음
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9,18 15,12 9,6"></polyline>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- 결과 모달 -->
-    <div id="results-modal" class="modal hidden">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="result-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 12l2 2 4-4"></path>
-                        <circle cx="12" cy="12" r="10"></circle>
-                    </svg>
-                </div>
-                <h2 class="modal-title">시험 완료!</h2>
-                <p class="modal-subtitle">모든 문제를 완료하였습니다.</p>
-            </div>
-
-            <div class="score-summary">
-                <div class="score-item">
-                    <div id="total-score" class="score-value">0</div>
-                    <div class="score-label">총점</div>
-                </div>
-                <div class="score-item">
-                    <div id="correct-answers" class="score-value correct">0</div>
-                    <div class="score-label">정답</div>
-                </div>
-                <div class="score-item">
-                    <div id="incorrect-answers" class="score-value incorrect">0</div>
-                    <div class="score-label">오답</div>
-                </div>
-                <div class="score-item">
-                    <div id="percentage" class="score-value">0%</div>
-                    <div class="score-label">정답률</div>
-                </div>
-            </div>
-
-            <div class="pass-criteria">
-                <h3>합격 기준</h3>
-                <div id="pass-status" class="pass-status">
-                    <span>60점 이상 (36문제 이상 정답)</span>
-                    <span id="pass-result" class="pass-result">불합격</span>
-                </div>
-            </div>
-
-            <div class="modal-actions">
-                <button id="close-modal" class="modal-btn modal-btn-outline">닫기</button>
-                <button id="restart-exam" class="modal-btn modal-btn-primary">다시 시작</button>
-            </div>
+    <button id="prev-button">이전 문제</button>
+    <button id="next-button">다음 문제</button>
+        <div id="results">
+            <!-- Results or feedback will appear here -->
         </div>
     </div>
 
     <script src="script.js"></script>
+    <script>
+        const submitButton = document.getElementById('submit-button');
+        submitButton.addEventListener('click', checkAnswer);
+
+        function checkAnswer() {
+            // Your answer checking logic here
+        }
+    </script>
 </body>
 </html>
