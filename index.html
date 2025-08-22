@@ -15,7 +15,14 @@
         <div id="nav-buttons" style="text-align:center; margin-top:20px;">
             <button id="prev-button">이전 문제</button>
             <button id="next-button">다음 문제</button>
+            <div style="margin-top:10px;">
+            </div>
+            <div id="goto-box" style="position:fixed; right:32px; bottom:32px; z-index:1000; background:rgba(255,255,255,0.95); box-shadow:0 2px 8px rgba(0,0,0,0.1); padding:12px 16px; border-radius:12px;">
+                <input type="number" id="goto-input" min="1" max="80" placeholder="번호 입력" style="width:60px; height:40px; font-size:12px;">
+                <button id="goto-button" style="height:44px; width:80px; font-size:20px; background:#e0e0e0; border-radius:8px; border:1px solid #aaa; margin-left:8px; cursor:pointer;">이동</button>
+            </div>
         </div>
+    <div id="question-nav" style="margin-bottom:20px; text-align:center;"></div>
         <div id="results">
             <!-- Results or feedback will appear here -->
         </div>
